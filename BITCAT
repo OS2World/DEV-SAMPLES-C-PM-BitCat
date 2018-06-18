@@ -1,0 +1,7 @@
+
+BitCat2.OBJ: BitCat2.c Bitcat.h
+        CL -c -G2sw -W3 BitCat2.C
+
+BitCat2.exe: BitCat2.OBJ BitCat2.DEF
+        LINK BitCat2, /Align:16, NUL, OS2, BitCat2
+
