@@ -1,4 +1,4 @@
-
+/* Include file for bitcat2.c */
 
 static BYTE abBitCat[] =
                {

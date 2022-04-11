@@ -1,3 +1,12 @@
+//================================================
+// bitcat2.c : Bitmap demonstration for PM sample.
+// Version: 1.02
+// License: 3-Clause BSD License
+// Authors:
+// - Martin Iturbide, 2022
+// - Dave Yeo, 2022
+// - Charles Petzold, 1999 
+//================================================
 #define INCL_WIN
 #define INCL_GPI
 

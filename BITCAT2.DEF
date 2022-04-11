@@ -2,6 +2,5 @@
 
 NAME            BitCat2 WINDOWAPI
 
-DESCRIPTION     'Bitmap Creation and Display (C) Charles Petzold, 1988'
+DESCRIPTION     '@#OS2World:1.02#@##1## 10 Apr 2022 20:19:00     ARCAOS-444::::::v1.02@@Bitmap demonstration for PM sample.'
 EXPORTS         ClientWndProc
-

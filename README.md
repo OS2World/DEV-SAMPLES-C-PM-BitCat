@@ -25,6 +25,17 @@ This version of this sample was modified to compile on ArcaOS with GCC 9 compile
 1) Remember to have correct OS/2 toolkit header files your path. For GCC the correct ones are the included on the "libc-devel", not the ones from the OS/2 Toolkit.
 2) Run "make" or "make 2>&1 |tee make.out" to get the log file.
 
+HISTORY
+===============
+* 1.02 - 2022-04-10
+- Improved source code comments.
+
+* 1.01 - 2022-04-10
+- Changes for gcc compiler
+
+* 1.0 - 1990
+- Original version
+
 TROUBLESHOOT
 ===============
 The compile produce will run by just executing "nmake" (or "make") on the directory. If you want to save the log file you can run it as "nmake 2>&1 |tee make.out". The log will be saved into the "make.out" file. 
