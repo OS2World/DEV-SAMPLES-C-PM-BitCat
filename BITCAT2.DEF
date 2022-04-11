@@ -1,9 +1,7 @@
+; BitCat2 defintion file
 
-NAME            BitCat2         WINDOWAPI
+NAME            BitCat2 WINDOWAPI
 
 DESCRIPTION     'Bitmap Creation and Display (C) Charles Petzold, 1988'
-PROTMODE
-HEAPSIZE        1024
-STACKSIZE       8192
 EXPORTS         ClientWndProc
 

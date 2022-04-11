@@ -4,10 +4,10 @@
 #include <os2.h>
 
 #include <stdlib.h>
-#include "BitCat.h"
+#include "BitCat2.h"
 
 
-MRESULT EXPENTRY ClientWndProc(HWND, USHORT, MPARAM, MPARAM);
+MRESULT EXPENTRY ClientWndProc(HWND, ULONG, MPARAM, MPARAM);
 
 HAB                     hab;
 
@@ -16,10 +16,10 @@ HAB                     hab;
 
 int main(void)
    {
-      static CHAR       szClientClass[] = "BitCat2";
-      static ULONG      flFrameFlags = FCF_TITLEBAR      | FCF_SYSMENU  |
-                                       FCF_SIZEBORDER    | FCF_MINMAX   |
-                                       FCF_SHELLPOSITION | FCF_TASKLIST;
+      static unsigned char     	szClientClass[] = "BitCat2";
+      static ULONG      	flFrameFlags = 	FCF_TITLEBAR      | FCF_SYSMENU  |
+						FCF_SIZEBORDER    | FCF_MINMAX   |
+						FCF_SHELLPOSITION | FCF_TASKLIST;
 
 
       HMQ               hmq;
@@ -37,9 +37,9 @@ int main(void)
 
       hwndFrame = WinCreateStdWindow(HWND_DESKTOP, WS_VISIBLE,
                                      &flFrameFlags, szClientClass, NULL,
-                                     0L, NULL, 0, &hwndClient);
+                                     0L, 0, 0, &hwndClient);
 
-      while ( WinGetMsg(hab, &qmsg, NULL, 0, 0) )
+      while ( WinGetMsg(hab, &qmsg, 0, 0, 0) )
             WinDispatchMsg(hab, &qmsg);
 
       WinDestroyWindow(hwndFrame);
@@ -49,15 +49,15 @@ int main(void)
    }
 
 
-MRESULT EXPENTRY ClientWndProc(HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
+MRESULT EXPENTRY ClientWndProc(HWND hwnd, ULONG msg, MPARAM mp1, MPARAM mp2)
    {
       static HBITMAP    hbm;
       static HDC        hdcMemory;
       static HPS        hpsMemory;
-      static SHORT      cxClient,
+      static LONG       cxClient,
                         cyClient;
-      BITMAPINFO        *pbmi;
-      BITMAPINFOHEADER  bmp;
+      BITMAPINFO2       *pbmi;
+      BITMAPINFOHEADER2 bmp;
       HPS               hps;
       POINTL            aptl[4];
       SIZEL             sizl;
@@ -67,7 +67,7 @@ MRESULT EXPENTRY ClientWndProc(HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
       switch(msg)
          {
             case WM_CREATE:
-                  hdcMemory = DevOpenDC(hab, OD_MEMORY, "*", 0L, NULL, NULL);
+                  hdcMemory = DevOpenDC(hab, OD_MEMORY, (PSZ)"*", 0L, NULL, 0);
 
                   sizl.cx = 0;
                   sizl.cy = 0;
@@ -111,7 +111,7 @@ MRESULT EXPENTRY ClientWndProc(HWND hwnd, USHORT msg, MPARAM mp1, MPARAM mp2)
                   return(0);
 
             case WM_PAINT:
-                  hps = WinBeginPaint(hwnd, NULL, NULL);
+                  hps = WinBeginPaint(hwnd, 0, NULL);
 
                   aptl[0].x = 0;
                   aptl[0].y = 0;
