@@ -1,6 +1,8 @@
 # DEV-SAMPLES-PM-BitCat
 Bitmap demonstration for PM sample. Source code in C language.
 
+![BitCat ScreenShot](/wiki/BitCat_001.png)
+
 LICENSE
 ===============
 * The 3-Clause BSD License.
